@@ -36,10 +36,12 @@ h2{
 }
 
 h2::before{
-    margin-left: -1.1rem;
+    
+    margin-left: -3.7rem;
     padding: 0 0.5rem 0 0;
     color: #fff;
-    content: '#';
+    content: '.text: ';
+    
 }
 
 header{
@@ -56,12 +58,20 @@ header{
     }
 }
 
+@media only screen and (max-width: 930px) {
+    h2::before{
+    
+        display: none;
+        
+    }
+}
+
 header .logo{
     text-decoration: none;
     color: #bbb;
     font-weight: 600;
     font-size: 1.5rem;
-    letter-spacing: -0.1rem;
+    letter-spacing: 0rem;
 }
 
 header .menu-items{
