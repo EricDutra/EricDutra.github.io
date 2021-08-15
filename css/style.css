@@ -175,3 +175,7 @@ pre{
     background-color: #131313;
     padding: 6px;
 }
+
+iframe{
+    max-width: 95%;
+}
