@@ -137,6 +137,7 @@ pre{
 .post-text{
     font-size: 1rem;
     line-height: 1.6rem;
+    max-width: 100%;
 }
 
 .footer-wrap{
@@ -177,5 +178,5 @@ pre{
 }
 
 iframe{
-    max-width: 95%;
+    max-width: 100%;
 }
