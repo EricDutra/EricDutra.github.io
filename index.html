@@ -6,13 +6,13 @@
         <meta name="HandheldFriendly" content="True">
         <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1" />
         <meta property="og:type" content="website">
-        <meta property="og:title" content="Eric//">
+        <meta property="og:title" content="Eric">
         <meta property="og:url" content="https://ericdutra.github.io/">
-        <meta property="og:site_name" content="Eric//">
+        <meta property="og:site_name" content="Eric">
         <meta property="og:locale" content="pt_BR">
         <meta property="article:author" content="Eric">
         <meta name="twitter:card" content="summary">
-        <title>Eric//</title>
+        <title>Eric</title>
         <link rel="stylesheet" href="css/style.css">
         <link rel="stylesheet" href="highlight/styles/default.min.css">
         <link rel="stylesheet" href="highlight/styles/dracula.css">
@@ -23,7 +23,7 @@
     </head>
     <body>
         <header>
-            <a href="#" class="logo"><i class="fab fa-discord"></i> Eric#0811</a>
+            <a href="" class="logo"><i class="fab fa-discord"></i> Eric#0811</a>
 
             <!--
             <a href="#" class="menu-items">Contato</a>
@@ -32,19 +32,136 @@
         </header>
 
         <div class="content">
-            <h1>What is Lorem Ipsum?</h1>
-            <div class="post-info"><b>Eric</b> 03/08/2021</div>
-            <div class="post-text">
-                <b>Lorem Ipsum</b> is simply dummy text of the printing and <a href="#">typesetting industry</a>. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book. It has survived not only five centuries, but also the leap into electronic typesetting, remaining essentially unchanged. It was popularised in the 1960s with the release of Letraset sheets containing Lorem Ipsum passages, and more recently with desktop publishing software like Aldus PageMaker including versions of Lorem Ipsum.
+
+            <div class="post" id="post-1" style="display: none;">
+
+                <h1>Análise do [666] -Explicit- (vulgo Carlos Augusto)</h1>
+                <div class="post-info"><b>Eric</b> 13/08/2021</div>
+                <div class="post-text">
+                    Eu gostaria de começar deixando claro que eu não me orgulho de fazer isso. É como brigar com uma criança. Eu tomei a decisão de fazer esse post porque não é legal deixar que alguém continue enganando pessoas leigas e usando isso como forma de obter algum reconhecimento usando meu nome. Eu não sei se essa pessoa possui algum problema, não entrei em contato com alguém da família ainda, apesar de ter quase certeza que sim, vou tratar como uma pessoa normal por enquanto.
+                    <br>
+                    <h2>Por que tantos fakes?</h2>
+                    Daniel Duarte<br>
+                    [666] -Explicit-<br>
+                    MitoFofatoba<br>
+                    E mais alguns perfis no Facebook usados para divulgar suas idiotices. O rapaz é tão inteligente que postou uma print e esqueceu de pelo menos esconder as duas contas logadas no navegador e youtube.
+                    <img src="http://i.epvpimg.com/vsqOdab.png" class="image">
+                    <img src="http://i.epvpimg.com/barFcab.png" class="image">
+                    <img src="http://i.epvpimg.com/gMJ7fab.png" class="image">
+                    <img src="http://i.epvpimg.com/NPZ1aab.png" class="image">
+                    <br>
+                    Notem o "segurança digital" no nome. Piada.
+                    <h2>Usa a tag [DEV], mas realmente é um desenvolvedor?</h2>
+                    Vamos analisar a única script que encontrei postada por ele no epvp e vamos entender até onde vai o seu conhecimento.
+
+                    Encontrei a script aqui: <a href="https://www.elitepvpers.com/forum/shaiya/4915195-skill-block-ep-6-4-a.html" target="_blank">https://www.elitepvpers.com/forum/shaiya/4915195-skill-block-ep-6-4-a.html</a>
+
+                    <br><br>
+                    Script:
+                    <pre>
+                        <code>
+                            // ||||||Desnvolvido por [DEV]Carlos||||||
+                            //   |||||| ProjetoShaiya ||||||
+                            //    |||||||04-06-2021|||||||
+                            [ENABLE]
+                            alloc(novamemoria,2048)
+                            label(retorne)
+                            label(code)
+                            label(BNB)
+                            label(sair)
+
+                            novamemoria:
+
+                            BNB:
+                            cmp byte ptr[eax],00000063
+                            jmp code
+
+                            code:
+                            add al,[eax]
+                            add al,00
+                            add al,5C
+
+                            sair:
+                            jmp retorne
+
+                            070CEE19:
+                            jmp novamemoria
+                            nop
+                            retorne:
+
+                            [DISABLE]
+                            dealloc(novamemoria)
+                            070CEE19:
+                            add al,[eax]
+                            add al,00
+                            add al,5C
+                        </code>
+                    </pre>
+
+                    Ok. Dói os olhos e não faz nenhum sentido. <br><br>
+                    
+                    <b>Primeira linha</b>: Ele faz uma comparação do byte que está no valor do endereço de eax com 0x63 (99 em decimal), o que é 99? Não é o ID da Skill, não faz sentido e não existe nada em eax e eu já explico o motivo.
+                    <br><br>
+                    <b>Segunda linha</b>: Tá, ele acabou de ignorar a linha acima adicionando um jmp, que é um jump incondicional, é um comando que faz o código pular para um endereço sem depender de nenhuma condição, sem checar a flag, apenas pula para o label denominado "code", ou seja, o código acima poderia ser apagado que não faria diferença.
+                    <br><br>
+                    <b>Terceira linha</b>: ???? o que ele ta fazendo? Aqui fica o label "code" e essa parte do código seria executada mesmo apagando os dois comandos acima, qual o sentido? Ele colocou um comando para pular para a linha de baixo, sendo que se ele não adicionasse nenhum comando, o código abaixo já seria executado automaticamente.
+                    <br><br>
+                    <b>Demais linhas:</b>: Ele pega o valor de eax e adiciona em al, que seria como o registrador eax, só que para apenas 1 byte, depois adiciona 0 (????? qual o sentido de adicionar 0?) e depois adiciona 0x5C (92 em decimal), de novo, o que é 92? Não tem sentido.
+                    <br><br>
+                    Não existe nada em eax porque ele aplicou a script no endereço <b>0x070CEE19</b>, é um endereço dinâmico, geralmente usado por dlls e que muda o código toda vez que você reinicia a aplicação. 
+                    <br><br>
+                    <b>Resumo:</b>
+                    Toda essa script inútil não faz nada e ainda é executada em uma parte de código que fica fora do ps_game, ou seja, nem aplicada ela é. Provavelmente se der uma aula básica de Assembly para uma criança e pedir para que ela faça essa script, ela fará algo que faça mais sentido do que isso.
+                    <br>
+                    <h2>Ok, sabemos que Dev não é, mas e "hacker"?</h2>
+                    Ele fez 2 vídeos "burlando" o anticheat do Easy, vamos analisar.
+                    <br><br>
+                    <b>Primeiro vídeo:</b><br>
+                    <iframe width="560" height="315" src="https://www.youtube.com/embed/u1Ng-dV_gxk" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+                    <br><br>
+                    Ele realmente burlou o anticheat? Bem, em partes, mas qualquer pessoa lendo isso também conseguiria facilmente. Ele apenas usou um programa simples que pode ser encontrado no Google (como <a href="https://www.murgee.com/window-title-changer/" target="_blank">esse aqui</a>) para alterar o nome da janela do Cheat Engine, só isso. Essa versão do anticheat do Easy foi desenvolvida em meados de 2015, ainda no EP5, e fazia basicamente 2 coisas: Procurava por nomes suspeitos de janelas e verificava a integridade de algumas partes da memória do jogo, mas apenas partes importantes e que eram usadas geralmente por cheats mais chatos, como range hack e skillcut. Cheats como subir montanha e outros considerados de menor importância nem eram verificados, e eu fiz dessa forma porque quanto mais simples o anticheat for, menor será o uso de CPU do computador do player. Não adianta nada fazer um anticheat "bom" e fazer o CPU do pessoal travar em 100% de uso toda vez que o jogo for iniciado. Da mesma forma que não adianta nada usar criptografia para "proteger" os arquivos se eles ficarem sendo detectados por qualquer antivírus, o Easy não possui criptografia, todos os seus arquivos são abertos. 
+                    <br><br>
+                    <b>Segundo vídeo:</b><br>
+                    <iframe width="560" height="315" src="https://www.youtube.com/embed/ITfD5WHZLg8" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+                    <br><br>
+                    Nesse caso ele fez exatamente o mesmo que no outro vídeo, ele alterou o nome da janela do Cheat Engine, mas não burlou a principal função da nova versão do anticheat do Easy. Essa nova versão detecta qualquer alteração na memória <b>do jogo</b>, e para fingir que ele havia burlado, ele alterou uma parte da memória que não é do jogo, uma memória que pode ser alterada o quanto for que não vai fazer qualquer alteração no jogo. É por isso que no vídeo ele não fez nada, nem speed hack ele conseguiu ativar, o anticheat não permite. A prova de que ele fez isso está no <a href="https://youtu.be/ITfD5WHZLg8?t=187" target="_blank">tempo 3:07 do vídeo</a>, quando ele abre o memory viewer e mostra o endereço "game.exe+20C9035". Esse endereço é muito alto e ele só existe porque esse game.exe foi dumpado para remover a criptografia original dos servidores oficiais.
+                    <br><br>
+                    <h2>Também não é "hacker", então o que ele é?</h2>
+                    Provavelmente alguém que quer receber atenção a base do grito. Seu conhecimento beira o básico, e eu particularmente nunca vi algo que ele desenvolveu. Seus sites são feitos no webnode, um serviço feito para ajudar pessoas leigas a criarem seus próprios sites sem precisar de qualquer conhecimento em programação. Aqui está um exemplo: <a href="https://devshaiya.webnode.com/" target="_blank">https://devshaiya.webnode.com/</a>. <br><br> Ele vende um anticheat ("ante hacker" nas palavras dele), que pode ser visto aqui: <a href="https://www.facebook.com/ProjetoShaiya/posts/663061704414934" target="_blank">https://www.facebook.com/ProjetoShaiya/posts/663061704414934</a>, que nada mais é do que uma cópia do anticheat Codex, disponível gratuitamente aqui: <a href="https://www.youtube.com/watch?v=Z-hTwsH86Co" target="_blank">https://www.youtube.com/watch?v=Z-hTwsH86Co</a>.
+                    <br><br>
+                    Seu primeiro post tentando chamar atenção usando meu nome foi em 2016 (pode ser visto <a href="https://www.elitepvpers.com/forum/shaiya-pserver-development/4029227-shaiya-development.html" target="_blank"> clicando aqui</a>), onde ele dizia no epvp que coisas que eu tinha feito na época partiram de outra pessoa. De lá pra cá, passaram-se 5 anos e a mente desse <i>anim...</i> ser humano não evoluiu.
+                    
+                    <h3>Informações sobre ele:</h3>
+                    Endereço de IP: <span class="bg-dark">131.161.108.100 e 131.161.108.101</span><br>
+                    Localidade: <span class="bg-dark">Caucaia (aproximadamente), Ceara</span><br>
+                    CPU: <span class="bg-dark">Intel(R) Core(TM) i5-7400 CPU @ 3.00GHz</span><br>
+                    Pl. Mãe: <span class="bg-dark">Gigabyte Technology Co., Ltd. H110M-H DDR3-CF</span><br>
+                    Ram: <span class="bg-dark">16GB</span><br>
+                    GPU: <span class="bg-dark">NVIDIA GeForce GTX 1050</span><br>
+                    OS: <span class="bg-dark">Windows 10 Pro</span><br>
+                    Nome registrado no PC: <span class="bg-dark">DESKTOP-HEKRE9I</span><br><br>
+                    Downloads feitos por ele via torrent:
+                    <img src="http://i.epvpimg.com/pTNscab.png" class="image">
+                    <br>
+                    Pode ser visto aqui: <a href="https://iknowwhatyoudownload.com/en/peer/?ip=131.161.108.100" target="_blank">https://iknowwhatyoudownload.com/en/peer/?ip=131.161.108.100</a>
+                    <br><br>
+                    Para uma pessoa que se intitula "hacker", deixou que muitas informações fossem coletadas, né?
+                    <br><br>
+                    Eu sei que eu não deveria gastar tempo escrevendo um post sobre essa pessoa, mas ele estava enganando pessoas leigas, agora eu quero dar um ponto final nessa história e parar de perder tempo com isso.
+                    <br><br>
+                    E por fim, deixo essa afirmação dele:
+                    <img src="http://i.epvpimg.com/HqWHdab.png" class="image">
+                    <br><br><br><br>
+                </div>
+
             </div>
 
-            <h2>Why do we use it?</h2>
-            <div class="post-text">
-                It is a long established fact that a reader will be distracted by the readable content of a page when looking at its layout. The point of using Lorem Ipsum is that it has a more-or-less normal distribution of letters, as opposed to using 'Content here, content here', making it look like readable English. Many desktop publishing packages and web page editors now use Lorem Ipsum as their default model text, and a search for 'lorem ipsum' will uncover many web sites still in their infancy. Various versions have evolved over the years, sometimes by accident, sometimes on purpose (injected humour and the like).
+            <div class="main">
+                <ul>
+                    <li><a href="#1" class="link-post" data-post="1"><span class="date">13/08/2021</span><span class="title">Análise do [666] -Explicit- (vulgo Carlos Augusto)</span></a></li>
+                </ul>
             </div>
 
-
-            
         </div>
 
         <div class="footer-wrap">
@@ -53,8 +170,11 @@
                 <div class="right"><a href="https://ericdutra.github.io"><tt>ericdutra.github.io</tt></a></div>
             </div>
         </div>
+
     </body>
 
+    <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+    <script src="js/main.js"></script>
     <script src="highlight/highlight.min.js"></script>
     <script>hljs.highlightAll();</script>
 </html>

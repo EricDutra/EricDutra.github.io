@@ -83,6 +83,45 @@ header .menu-items{
     margin: 0 0.9rem 0 0.9rem;
 }
 
+pre{
+    white-space: pre-line;
+}
+
+.image{
+    margin-top: 2rem;
+    margin-right: auto;
+    margin-left: auto;
+    max-width: 95%;
+    display: block;
+}
+
+.main ul{
+    list-style: none;
+    margin: 0;
+    padding: 0;
+}
+
+.main ul li{
+    margin: 2rem 0 0 0;
+    color: #aaa;
+}
+
+.main ul a{
+    text-decoration: none;
+}
+
+.main ul li .date{
+    background-color: #131313;
+    padding: 6px;
+}
+
+.main ul li .title{
+    font-weight: 600;
+    font-size: 1.1rem;
+    margin: 0 0 0 1rem;
+    color: #23ba5b;
+}
+
 .content{
     max-width: 48rem;
     margin-right: auto;
@@ -130,4 +169,9 @@ header .menu-items{
 
 .footer .right{
     float: right;
+}
+
+.bg-dark{
+    background-color: #131313;
+    padding: 6px;
 }
