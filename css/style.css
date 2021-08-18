@@ -182,3 +182,20 @@ pre{
 iframe{
     max-width: 100%;
 }
+
+::-webkit-scrollbar {
+    width: 6px;
+}
+
+::-webkit-scrollbar-track {
+    background: #1d1f21;
+}
+
+::-webkit-scrollbar-thumb {
+    background: #23ba5b;
+    border-radius: 8px;
+}
+
+::-webkit-scrollbar-thumb:hover {
+    background: #278f4d;
+}
