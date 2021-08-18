@@ -20,6 +20,7 @@ a{
     text-decoration: underline;
     color: #fff;
     font-weight: 400;
+    word-wrap: break-word;
 }
 
 h1{
