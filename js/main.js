@@ -31,6 +31,14 @@ $(".link-post").click(function(){
     }
 });
 
+$("#send").click(function(){
+    if ($("#name").val().length < 2 || $("#name").val().length > 40)
+        return;
+
+    var url = "https://www.shaiya.com.br/ericnot.es/" + $("#name").val();
+    window.open(url, '_blank').focus();
+});
+
 $(".logo").click(function(){
     ShowPost();
 });
